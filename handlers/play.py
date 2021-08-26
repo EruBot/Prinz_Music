@@ -117,17 +117,17 @@ async def hfmm(_, message):
         return
     status = message.text.split(None, 1)[1]
     message.chat.id
-    if status == "ON" or status == "on" or status == "On":
+    if status in ["ON", "on", "On"]:
         lel = await message.reply("`Processing...`")
         if not message.chat.id in DISABLED_GROUPS:
             await lel.edit("Music Player Already Activated In This Chat")
             return
         DISABLED_GROUPS.remove(message.chat.id)
         await lel.edit(
-            f"Music Player Successfully Enabled For Users In The Chat {message.chat.id}"
+            f"Music Player Has Been Enabled on {message.chat.id}"
         )
 
-    elif status == "OFF" or status == "off" or status == "Off":
+    elif status in ["OFF", "off", "Off"]:
         lel = await message.reply("`Processing...`")
         
         if message.chat.id in DISABLED_GROUPS:
@@ -135,7 +135,7 @@ async def hfmm(_, message):
             return
         DISABLED_GROUPS.append(message.chat.id)
         await lel.edit(
-            f"Music Player Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"Music Player Has Been Disable on {message.chat.id}"
         )
     else:
         await message.reply_text(
@@ -170,7 +170,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@OdaHelper"
+        user.first_name = "@prinzmusicplayer"
     usar = user
     wew = usar.id
     try:
@@ -192,10 +192,10 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "Oda joined this group for playing music in VC"
+                        message.chat.id, "Prinz joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>Oda Assistent joined this chat</b>",
+                        "<b>Prinz Music joined this chat</b>",
                     )
                     
                 except UserAlreadyParticipant:
@@ -231,7 +231,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("📡 Updates", url=f"t.me/UserLazyXBot"),
+                    InlineKeyboardButton("📡 Updates", url=f"t.me/prinzeugenupdates"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
@@ -267,15 +267,15 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🚨 Support", url=f"t.me/OdaSupport"),
-                    InlineKeyboardButton("📡 Updates", url=f"t.me/UserLazyXBot"),
+                    InlineKeyboardButton("🚨 Support", url=f"t.me/ironbloodnations"),
+                    InlineKeyboardButton("📡 Updates", url=f"t.me/prinzeugenupdates"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
         )
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/a7adee6cf365d74734c5d.png"
+            thumb_name = "https://telegra.ph/file/a50a13d6505454bd5b77d.png"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -331,8 +331,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🚨 Support", url=f"t.me/OdaSupport"),
-                    InlineKeyboardButton("📡 Updates", url=f"t.me/UserLazyXBot"),
+                    InlineKeyboardButton("🚨 Support", url=f"t.me/ironbloodnations"),
+                    InlineKeyboardButton("📡 Updates", url=f"t.me/prinzeugenupdates"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
