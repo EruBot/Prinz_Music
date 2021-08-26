@@ -76,7 +76,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                 await f.close()
 
     image1 = Image.open("./background.png")
-    image2 = Image.open("etc/oda.png")
+    image2 = Image.open("etc/music.jpg")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
@@ -84,7 +84,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 32)
+    font = ImageFont.truetype("etc/Nexa Bold.otf", 32)
     draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
     draw.text(
         (190, 590), f"Duration: {duration}", (255, 255, 255), font=font
@@ -142,6 +142,7 @@ async def hfmm(_, message):
             "I only recognize `/musicplayer on` and /musicplayer `off only`"
         )
 
+
 @Client.on_callback_query(filters.regex(pattern=r"^(cls)$"))
 @cb_admin_check
 async def m_cb(b, cb):
@@ -154,6 +155,7 @@ async def m_cb(b, cb):
     if type_ == "cls":          
         await cb.answer("Closed menu")
         await cb.message.delete()
+
 
 # play
 @Client.on_message(command("play") & filters.group & ~filters.edited & ~filters.forwarded & ~filters.via_bot)
