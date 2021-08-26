@@ -80,4 +80,4 @@ async def admincache(client, message: Message):
         ),
     )
 
-    await message.reply_text("✅️ **Admin List** is **updated**")
+    await message.reply_text("✅️ **Updated** **admin list**")
