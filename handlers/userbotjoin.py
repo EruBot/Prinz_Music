@@ -16,14 +16,14 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Add me admin first</b>",
+            "<b>Add me to be admin first</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@OdaHelper"
+        user.first_name = "@prinzmusicplayer"
 
     try:
         await USER.join_chat(invitelink)
@@ -39,7 +39,7 @@ async def addchannel(client, message):
         )
         return
     await message.reply_text(
-        f"<b>{user.first_name} Join Seccsesfully</b>",
+        f"<b>{user.first_name} Join Sucessfully</b>",
     )
 
 
@@ -91,14 +91,14 @@ async def addcchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Add me Admin first</b>",
+            "<b>Add me to be Admin first</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@OdaHelper"
+        user.first_name = "@prinzmusicplayer"
 
     try:
         await USER.join_chat(invitelink)
@@ -115,5 +115,5 @@ async def addcchannel(client, message):
         )
         return
     await message.reply_text(
-        f"<b>{user.first_name} sudah bergabung dengan obrolan Anda</b>",
+        f"<b>{user.first_name} already joined the chat</b>",
     )
