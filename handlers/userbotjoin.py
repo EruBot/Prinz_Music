@@ -39,7 +39,7 @@ async def addchannel(client, message):
         )
         return
     await message.reply_text(
-        f"<b>{user.first_name} Join Sucessfully</b>",
+        f"<b>{user.first_name} Join Successfully</b>",
     )
 
 
