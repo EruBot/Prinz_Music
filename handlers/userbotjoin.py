@@ -1,4 +1,4 @@
-# Credit DaisyXMusic, Changes By UserLazy, Improve Code By UserLazy
+# Credit DaisyXMusic, Changed By UserLazy, Improve Code By UserLazy
 
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
@@ -62,7 +62,7 @@ async def bye(client, message):
 
     left=0
     failed=0
-    lol = await message.reply("**Asisten Meninggalkan semua obrolan**")
+    lol = await message.reply("**Assistant left all chats**")
     async for dialog in USER.iter_dialogs():
         try:
             await USER.leave_chat(dialog.chat.id)
