@@ -11,7 +11,7 @@ from helpers.filters import command, other_filters
 from callsmusic import callsmusic
 
 
-@Client.on_message(command(["pause", "jeda"]) & other_filters)
+@Client.on_message(command(["pausep", "jeda"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -19,7 +19,7 @@ async def pause(_, message: Message):
     await message.reply_text("⏸ Music Paused.")
 
 
-@Client.on_message(command(["resume", "lanjut"]) & other_filters)
+@Client.on_message(command(["resumep", "lanjut"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -27,7 +27,7 @@ async def resume(_, message: Message):
     await message.reply_text("▶️ Music Resumed.")
 
 
-@Client.on_message(command(["end", "stop"]) & other_filters)
+@Client.on_message(command(["endp", "stopp"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -40,7 +40,7 @@ async def stop(_, message: Message):
     await message.reply_text("❌ **Stop the Song!**")
 
 
-@Client.on_message(command("skip") & other_filters)
+@Client.on_message(command("skipp") & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
