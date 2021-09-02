@@ -84,7 +84,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/Maghrib.ttf", 32)
+    font = ImageFont.truetype("etc/fonts.ttf", 32)
     draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
     draw.text(
         (190, 590), f"Duration: {duration}", (255, 255, 255), font=font
@@ -112,7 +112,7 @@ async def hfmm(_, message):
         return
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/musicplayer on` and /musicplayer `off only`"
+            "I only recognize `/musicp on` and /musicp `off only`"
         )
         return
     status = message.text.split(None, 1)[1]
@@ -194,7 +194,7 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "Prinz joined this group for playing music in VC"
+                        message.chat.id, "Prinz Music joined this group for playing music in VC"
                     )
                     await lel.edit(
                         "<b>Prinz Music joined this chat</b>",
@@ -210,7 +210,7 @@ async def play(_, message: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i>Hey {user.first_name}, assistant userbot is not in this chat, ask admin to send /play command for first time to add it.</i>")
+            f"<i>Hey {user.first_name}, assistant userbot is not in this chat, ask admin to send `/playp` command for first time to add it.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
@@ -298,7 +298,7 @@ async def play(_, message: Message):
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
-            return await lel.edit("🧐 **What's the song you want to play?**")
+            return await lel.edit("🧐 **What song would you like to play?**")
         await lel.edit("🔎 **Finding the song...**")
         query = message.text.split(None, 1)[1]
         # print(query)
@@ -341,7 +341,7 @@ async def play(_, message: Message):
         )
         
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
+             await lel.edit(f"❌ Video longer than {DURATION_LIMIT} minutes aren't allowed to play!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
