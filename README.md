@@ -36,7 +36,7 @@
 Use [Repl Link](http://string.projectdils.repl.run) to get pyrogram string session
 
 ### Credits
-- [UserLazy](https://github.com/UserLazy): Dev
+- [UserLazy](https://github.com/UserLazy): Dev and for base this bot
 - [Laky](https://github.com/Laky-64) & [Andrew](https://github.com/AndrewLaneX): PyTgCalls
 - [Original Repo](https://github.com/suprojects/CallsMusic)
-- [Oda Nobunaga](https://t.me/OdaRobot): Bot
+- [Prinz Eugen](https://t.me/prinzeugen_robot): Music Bot Player & Manager
