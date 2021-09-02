@@ -1,6 +1,6 @@
 <h2 align="centre">Telegram Group Music Player Bot 🎵</h2>
 
-### A bot that can play music on telegram group's voice call
+### A bot that can play music on telegram group's voice chats
 
 <p align="center">
   <img src="https://telegra.ph/file/19836533e597cf69d167e.jpg">
@@ -25,7 +25,7 @@
 - `/pausep`: pause song play
 - `/resumep`: resume song play
 - `/skipp`: play next song
-- `/endp`: stop music play
+- `/endp`: stop music playing
 - `/ubjoin`: add assistant to group
 - `/reload`: refresh adminlist
 
