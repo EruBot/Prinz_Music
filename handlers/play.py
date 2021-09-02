@@ -101,7 +101,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 @Client.on_message(
-    command("musicplayer") & ~filters.edited & ~filters.bot & ~filters.private
+    command("musicp") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @authorized_users_only
 async def hfmm(_, message):
@@ -139,7 +139,7 @@ async def hfmm(_, message):
         )
     else:
         await message.reply_text(
-            "I only recognize `/musicplayer on` and /musicplayer `off only`"
+            "I only recognize `/musicp on` and /musicp `off only`"
         )
 
 
@@ -153,12 +153,12 @@ async def m_cb(b, cb):
     m_chat = cb.message.chat
 
     if type_ == "cls":          
-        await cb.answer("Closed menu")
+        await cb.answer("Closed Menu")
         await cb.message.delete()
 
 
 # play
-@Client.on_message(command("play") & filters.group & ~filters.edited & ~filters.forwarded & ~filters.via_bot)
+@Client.on_message(command("playp") & filters.group & ~filters.edited & ~filters.forwarded & ~filters.via_bot)
 async def play(_, message: Message):
     global que
     global useer
@@ -232,8 +232,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("📡 Updates", url=f"t.me/prinzeugenupdates"),
+                    InlineKeyboardButton("📝 Playlist", callback_data="playlist"),
+                    InlineKeyboardButton("📢 Updates", url=f"t.me/prinzeugenupdates"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
@@ -269,8 +269,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🚨 Support", url=f"t.me/ironbloodnations"),
-                    InlineKeyboardButton("📡 Updates", url=f"t.me/prinzeugenupdates"),
+                    InlineKeyboardButton("🛎 Support", url=f"t.me/ironbloodnations"),
+                    InlineKeyboardButton("📢 Updates", url=f"t.me/prinzeugenupdates"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
@@ -333,8 +333,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🚨 Support", url=f"t.me/ironbloodnations"),
-                    InlineKeyboardButton("📡 Updates", url=f"t.me/prinzeugenupdates"),
+                    InlineKeyboardButton("🛎 Support", url=f"t.me/ironbloodnations"),
+                    InlineKeyboardButton("📢 Updates", url=f"t.me/prinzeugenupdates"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
