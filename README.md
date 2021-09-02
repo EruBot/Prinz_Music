@@ -15,18 +15,18 @@
 
 ### Commands 🛠
 #### For all in group
-- `/play`: reply to youtube url
--  `/play`: reply song file to play song
-- `/play <song name>`: play song you requested
-- `/song <song name>`: download songs you want quickly
+- `/playp`: reply to youtube url
+-  `/playp`: reply song file to play song
+- `/playp <song name>`: play song you requested
+- `/song <song name>`: download song you want quickly
 - `/search <query>`: search videos on youtube with details
 
 #### Admins only
-- `/pause`: pause song play
-- `/resume`: resume song play
-- `/skip`: play next song
-- `/end`: stop music play
-- `/userbotjoin`: add assistant to group
+- `/pausep`: pause song play
+- `/resumep`: resume song play
+- `/skipp`: play next song
+- `/endp`: stop music play
+- `/ubjoin`: add assistant to group
 - `/reload`: refresh adminlist
 
 ### Deploy To Heroku</h4>
